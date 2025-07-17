@@ -37,9 +37,13 @@
         <td><?= htmlspecialchars($c->email) ?></td>
         <td><?= htmlspecialchars($c->phone) ?></td>
         <td>
-          <?= isset($c->properties) 
-                ? count($c->properties) . ' property(ies)' 
-                : 'None' 
+          <?php
+            $count = count($c->properties);
+            if ($count > 0) {
+                echo $count . ' property' . ($count !== 1 ? 'ies' : '');
+            } else {
+                echo 'None';
+            }
           ?>
         </td>
         <td>
@@ -66,7 +70,7 @@
     input.addEventListener('input', function() {
       const q = this.value.toLowerCase();
       rows.forEach(row => {
-        row.style.display = 
+        row.style.display =
           row.textContent.toLowerCase().includes(q) ? '' : 'none';
       });
     });
