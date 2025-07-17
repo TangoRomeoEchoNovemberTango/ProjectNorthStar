@@ -1,6 +1,6 @@
 <?php include __DIR__ . '/../../../shared/header.php'; ?>
 
-<!-- LIVE SEARCH ENABLED: calls v1 -->
+<!-- LIVE SEARCH ENABLED: calls final -->
 
 <h1>Calls</h1>
 
@@ -18,24 +18,32 @@
   >
 </div>
 
-<table id="calls-table" class="table table-bordered">
+<table id="calls-table" class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th>Contact</th><th>Type</th><th>Date/Time</th><th>Notes</th><th>Actions</th>
+      <th>ID</th>
+      <th>Contact</th>
+      <th>Date/Time</th>
+      <th>Duration (min)</th>
+      <th>Summary</th>
+      <th>Outcome</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <?php foreach ($calls as $cl): ?>
       <tr>
+        <td><?= htmlspecialchars($cl->id) ?></td>
         <td>
           <?php 
             $ct = \App\Models\Contact::find((int)$cl->contact_id);
             echo htmlspecialchars("{$ct->first_name} {$ct->last_name}");
           ?>
         </td>
-        <td><?= htmlspecialchars($cl->type) ?></td>
-        <td><?= htmlspecialchars($cl->call_datetime) ?></td>
-        <td><?= htmlspecialchars($cl->notes) ?></td>
+        <td><?= htmlspecialchars($cl->call_time) ?></td>
+        <td><?= htmlspecialchars((string)$cl->duration) ?></td>
+        <td><?= htmlspecialchars($cl->summary) ?></td>
+        <td><?= htmlspecialchars($cl->outcome) ?></td>
         <td>
           <a href="<?= BASE_URL ?>/public/index.php?mod=calls&action=edit&id=<?= $cl->id ?>"
              class="btn btn-sm btn-secondary">Edit</a>
@@ -51,17 +59,17 @@
 </table>
 
 <script>
-  console.log('live-search calls v1 loaded');
-  document.addEventListener('DOMContentLoaded', () => {
+  console.log('live-search calls final loaded');
+  document.addEventListener('DOMContentLoaded', function() {
     const input = document.getElementById('search-input');
     const rows = Array.from(
       document.querySelectorAll('#calls-table tbody tr')
     );
-    input.addEventListener('input', () => {
-      const q = input.value.toLowerCase();
-      rows.forEach(r => {
-        r.style.display = 
-          r.textContent.toLowerCase().includes(q) ? '' : 'none';
+    input.addEventListener('input', function() {
+      const q = this.value.toLowerCase();
+      rows.forEach(row => {
+        row.style.display = 
+          row.textContent.toLowerCase().includes(q) ? '' : 'none';
       });
     });
   });

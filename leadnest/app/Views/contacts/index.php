@@ -1,6 +1,6 @@
 <?php include __DIR__ . '/../../../shared/header.php'; ?>
 
-<!-- LIVE SEARCH ENABLED: contacts v1 -->
+<!-- LIVE SEARCH ENABLED: contacts final -->
 
 <h1>Contacts</h1>
 
@@ -18,18 +18,30 @@
   >
 </div>
 
-<table id="contacts-table" class="table table-bordered">
+<table id="contacts-table" class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th>Name</th><th>Email</th><th>Phone</th><th>Actions</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Properties</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <?php foreach ($contacts as $c): ?>
       <tr>
+        <td><?= htmlspecialchars($c->id) ?></td>
         <td><?= htmlspecialchars("{$c->first_name} {$c->last_name}") ?></td>
         <td><?= htmlspecialchars($c->email) ?></td>
         <td><?= htmlspecialchars($c->phone) ?></td>
+        <td>
+          <?= isset($c->properties) 
+                ? count($c->properties) . ' property(ies)' 
+                : 'None' 
+          ?>
+        </td>
         <td>
           <a href="<?= BASE_URL ?>/public/index.php?mod=contacts&action=edit&id=<?= $c->id ?>"
              class="btn btn-sm btn-secondary">Edit</a>
@@ -45,17 +57,17 @@
 </table>
 
 <script>
-  console.log('live-search contacts v1 loaded');
-  document.addEventListener('DOMContentLoaded', () => {
+  console.log('live-search contacts final loaded');
+  document.addEventListener('DOMContentLoaded', function() {
     const input = document.getElementById('search-input');
     const rows = Array.from(
       document.querySelectorAll('#contacts-table tbody tr')
     );
-    input.addEventListener('input', () => {
-      const q = input.value.toLowerCase();
-      rows.forEach(r => {
-        r.style.display = 
-          r.textContent.toLowerCase().includes(q) ? '' : 'none';
+    input.addEventListener('input', function() {
+      const q = this.value.toLowerCase();
+      rows.forEach(row => {
+        row.style.display = 
+          row.textContent.toLowerCase().includes(q) ? '' : 'none';
       });
     });
   });
