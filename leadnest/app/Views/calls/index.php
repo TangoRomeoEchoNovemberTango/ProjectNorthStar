@@ -1,17 +1,12 @@
 <?php include __DIR__ . '/../../../shared/header.php'; ?>
 
+<!-- LIVE SEARCH ENABLED: calls v1 -->
+
 <h1>Calls</h1>
 
-<?php if (! empty($_SESSION['flash'])): ?>
-  <div class="alert alert-<?php echo $_SESSION['flash']['type']; ?>">
-    <?php echo htmlspecialchars($_SESSION['flash']['message']); ?>
-  </div>
-  <?php unset($_SESSION['flash']); ?>
-<?php endif; ?>
-
-<a href="<?php echo BASE_URL; ?>/public/index.php?mod=calls&action=create"
+<a href="<?= BASE_URL ?>/public/index.php?mod=calls&action=create"
    class="btn btn-primary mb-3">
-  Log New Call
+  + Log New Call
 </a>
 
 <div class="mb-3">
@@ -23,70 +18,53 @@
   >
 </div>
 
-<table id="calls-table" class="table table-bordered table-striped">
+<table id="calls-table" class="table table-bordered">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Contact</th>
-      <th>Type</th>
-      <th>Date/Time</th>
-      <th>Notes</th>
-      <th>Actions</th>
+      <th>Contact</th><th>Type</th><th>Date/Time</th><th>Notes</th><th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <?php if (! empty($calls)): ?>
-      <?php foreach ($calls as $cl): ?>
-        <tr>
-          <td><?php echo htmlspecialchars($cl->id); ?></td>
-          <td>
-            <?php
-              $ct = \App\Models\Contact::find((int)$cl->contact_id);
-              echo htmlspecialchars("{$ct->first_name} {$ct->last_name}");
-            ?>
-          </td>
-          <td><?php echo htmlspecialchars($cl->type); ?></td>
-          <td><?php echo htmlspecialchars($cl->call_datetime); ?></td>
-          <td><?php echo htmlspecialchars($cl->notes); ?></td>
-          <td>
-            <a href="<?php echo BASE_URL; ?>/public/index.php?mod=calls&action=edit&id=<?php echo $cl->id; ?>"
-               class="btn btn-sm btn-secondary">Edit</a>
-            <a href="<?php echo BASE_URL; ?>/public/index.php?mod=calls&action=destroy&id=<?php echo $cl->id; ?>"
-               class="btn btn-sm btn-danger"
-               onclick="return confirm('Delete this call?');">
-              Delete
-            </a>
-          </td>
-        </tr>
-      <?php endforeach; ?>
-    <?php else: ?>
+    <?php foreach ($calls as $cl): ?>
       <tr>
-        <td colspan="6" class="text-center text-muted fst-italic">
-          No calls logged yet.
+        <td>
+          <?php 
+            $ct = \App\Models\Contact::find((int)$cl->contact_id);
+            echo htmlspecialchars("{$ct->first_name} {$ct->last_name}");
+          ?>
+        </td>
+        <td><?= htmlspecialchars($cl->type) ?></td>
+        <td><?= htmlspecialchars($cl->call_datetime) ?></td>
+        <td><?= htmlspecialchars($cl->notes) ?></td>
+        <td>
+          <a href="<?= BASE_URL ?>/public/index.php?mod=calls&action=edit&id=<?= $cl->id ?>"
+             class="btn btn-sm btn-secondary">Edit</a>
+          <a href="<?= BASE_URL ?>/public/index.php?mod=calls&action=destroy&id=<?= $cl->id ?>"
+             class="btn btn-sm btn-danger"
+             onclick="return confirm('Delete this call?');">
+            Delete
+          </a>
         </td>
       </tr>
-    <?php endif; ?>
+    <?php endforeach; ?>
   </tbody>
 </table>
 
 <script>
-// Client-side search on the Calls table
-document.addEventListener('DOMContentLoaded', function() {
-  const input = document.getElementById('search-input');
-  const rows  = Array.from(
-    document.querySelectorAll('#calls-table tbody tr')
-  );
-
-  input.addEventListener('input', function() {
-    const q = this.value.toLowerCase();
-    rows.forEach(row => {
-      row.style.display = row.textContent.toLowerCase().includes(q)
-        ? ''
-        : 'none';
+  console.log('live-search calls v1 loaded');
+  document.addEventListener('DOMContentLoaded', () => {
+    const input = document.getElementById('search-input');
+    const rows = Array.from(
+      document.querySelectorAll('#calls-table tbody tr')
+    );
+    input.addEventListener('input', () => {
+      const q = input.value.toLowerCase();
+      rows.forEach(r => {
+        r.style.display = 
+          r.textContent.toLowerCase().includes(q) ? '' : 'none';
+      });
     });
   });
-});
 </script>
 
 <?php include __DIR__ . '/../../../shared/footer.php'; ?>
-```

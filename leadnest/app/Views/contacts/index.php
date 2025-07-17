@@ -48,12 +48,15 @@
   console.log('live-search contacts v1 loaded');
   document.addEventListener('DOMContentLoaded', () => {
     const input = document.getElementById('search-input');
-    const rows = Array.from(document.querySelectorAll('#contacts-table tbody tr'));
+    const rows = Array.from(
+      document.querySelectorAll('#contacts-table tbody tr')
+    );
     input.addEventListener('input', () => {
       const q = input.value.toLowerCase();
-      rows.forEach(r => r.style.display = 
-        r.textContent.toLowerCase().includes(q) ? '' : 'none'
-      );
+      rows.forEach(r => {
+        r.style.display = 
+          r.textContent.toLowerCase().includes(q) ? '' : 'none';
+      });
     });
   });
 </script>
