@@ -11,9 +11,10 @@
 
 <a href="<?php echo BASE_URL; ?>/public/index.php?mod=contacts&action=create"
    class="btn btn-primary mb-3">
-  New Contact
+  + New Contact
 </a>
 
+<!-- Live-search input -->
 <div class="mb-3">
   <input
     type="text"
@@ -26,10 +27,10 @@
 <table id="contacts-table" class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th>ID</th>
       <th>Name</th>
       <th>Email</th>
       <th>Phone</th>
+      <th>Properties</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -37,10 +38,17 @@
     <?php if (! empty($contacts)): ?>
       <?php foreach ($contacts as $c): ?>
         <tr>
-          <td><?php echo htmlspecialchars($c->id); ?></td>
           <td><?php echo htmlspecialchars("{$c->first_name} {$c->last_name}"); ?></td>
           <td><?php echo htmlspecialchars($c->email); ?></td>
           <td><?php echo htmlspecialchars($c->phone); ?></td>
+          <td>
+            <?php
+              // if you have a relationship, list property count or names
+              echo isset($c->properties) 
+                ? count($c->properties) . ' property(ies)'
+                : 'None';
+            ?>
+          </td>
           <td>
             <a href="<?php echo BASE_URL; ?>/public/index.php?mod=contacts&action=edit&id=<?php echo $c->id; ?>"
                class="btn btn-sm btn-secondary">Edit</a>
@@ -63,7 +71,7 @@
 </table>
 
 <script>
-// Simple client-side filter: hides rows that don't match the query
+// Client-side live search for contacts table
 document.addEventListener('DOMContentLoaded', function() {
   const input = document.getElementById('search-input');
   const rows  = Array.from(
