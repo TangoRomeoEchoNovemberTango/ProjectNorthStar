@@ -3,22 +3,24 @@
 <h1>Calls</h1>
 
 <?php if (! empty($_SESSION['flash'])): ?>
-  <div class="alert alert-<?= $_SESSION['flash']['type'] ?>">
-    <?= htmlspecialchars($_SESSION['flash']['message']) ?>
+  <div class="alert alert-<?php echo $_SESSION['flash']['type']; ?>">
+    <?php echo htmlspecialchars($_SESSION['flash']['message']); ?>
   </div>
   <?php unset($_SESSION['flash']); ?>
 <?php endif; ?>
 
-<a href="<?= BASE_URL ?>/public/index.php?mod=calls&action=create"
+<a href="<?php echo BASE_URL; ?>/public/index.php?mod=calls&action=create"
    class="btn btn-primary mb-3">
   Log New Call
 </a>
 
 <div class="mb-3">
-  <input type="text"
-         id="search-input"
-         class="form-control"
-         placeholder="🔍 Search calls…">
+  <input
+    type="text"
+    id="search-input"
+    class="form-control"
+    placeholder="🔍 Search calls…"
+  >
 </div>
 
 <table id="calls-table" class="table table-bordered table-striped">
@@ -36,22 +38,20 @@
     <?php if (! empty($calls)): ?>
       <?php foreach ($calls as $cl): ?>
         <tr>
-          <td><?= htmlspecialchars($cl->id) ?></td>
+          <td><?php echo htmlspecialchars($cl->id); ?></td>
           <td>
             <?php
-              $contact = \App\Models\Contact::find((int)$cl->contact_id);
-              echo htmlspecialchars("{$contact->first_name} {$contact->last_name}");
+              $ct = \App\Models\Contact::find((int)$cl->contact_id);
+              echo htmlspecialchars("{$ct->first_name} {$ct->last_name}");
             ?>
           </td>
-          <td><?= htmlspecialchars($cl->type) ?></td>
-          <td><?= htmlspecialchars($cl->call_datetime) ?></td>
-          <td><?= htmlspecialchars($cl->notes) ?></td>
+          <td><?php echo htmlspecialchars($cl->type); ?></td>
+          <td><?php echo htmlspecialchars($cl->call_datetime); ?></td>
+          <td><?php echo htmlspecialchars($cl->notes); ?></td>
           <td>
-            <a href="<?= BASE_URL ?>
-               /public/index.php?mod=calls&action=edit&id=<?= $cl->id ?>"
+            <a href="<?php echo BASE_URL; ?>/public/index.php?mod=calls&action=edit&id=<?php echo $cl->id; ?>"
                class="btn btn-sm btn-secondary">Edit</a>
-            <a href="<?= BASE_URL ?>
-               /public/index.php?mod=calls&action=destroy&id=<?= $cl->id ?>"
+            <a href="<?php echo BASE_URL; ?>/public/index.php?mod=calls&action=destroy&id=<?php echo $cl->id; ?>"
                class="btn btn-sm btn-danger"
                onclick="return confirm('Delete this call?');">
               Delete
@@ -61,8 +61,7 @@
       <?php endforeach; ?>
     <?php else: ?>
       <tr>
-        <td colspan="6"
-            class="text-center text-muted fst-italic">
+        <td colspan="6" class="text-center text-muted fst-italic">
           No calls logged yet.
         </td>
       </tr>
@@ -81,11 +80,13 @@ document.addEventListener('DOMContentLoaded', function() {
   input.addEventListener('input', function() {
     const q = this.value.toLowerCase();
     rows.forEach(row => {
-      const text = row.textContent.toLowerCase();
-      row.style.display = text.includes(q) ? '' : 'none';
+      row.style.display = row.textContent.toLowerCase().includes(q)
+        ? ''
+        : 'none';
     });
   });
 });
 </script>
 
 <?php include __DIR__ . '/../../../shared/footer.php'; ?>
+```

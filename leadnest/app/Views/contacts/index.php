@@ -3,22 +3,24 @@
 <h1>Contacts</h1>
 
 <?php if (! empty($_SESSION['flash'])): ?>
-  <div class="alert alert-<?= $_SESSION['flash']['type'] ?>">
-    <?= htmlspecialchars($_SESSION['flash']['message']) ?>
+  <div class="alert alert-<?php echo $_SESSION['flash']['type']; ?>">
+    <?php echo htmlspecialchars($_SESSION['flash']['message']); ?>
   </div>
   <?php unset($_SESSION['flash']); ?>
 <?php endif; ?>
 
-<a href="<?= BASE_URL ?>/public/index.php?mod=contacts&action=create"
+<a href="<?php echo BASE_URL; ?>/public/index.php?mod=contacts&action=create"
    class="btn btn-primary mb-3">
   New Contact
 </a>
 
 <div class="mb-3">
-  <input type="text"
-         id="search-input"
-         class="form-control"
-         placeholder="🔍 Search contacts…">
+  <input
+    type="text"
+    id="search-input"
+    class="form-control"
+    placeholder="🔍 Search contacts…"
+  >
 </div>
 
 <table id="contacts-table" class="table table-bordered table-striped">
@@ -35,18 +37,14 @@
     <?php if (! empty($contacts)): ?>
       <?php foreach ($contacts as $c): ?>
         <tr>
-          <td><?= htmlspecialchars($c->id) ?></td>
+          <td><?php echo htmlspecialchars($c->id); ?></td>
+          <td><?php echo htmlspecialchars("{$c->first_name} {$c->last_name}"); ?></td>
+          <td><?php echo htmlspecialchars($c->email); ?></td>
+          <td><?php echo htmlspecialchars($c->phone); ?></td>
           <td>
-            <?= htmlspecialchars("{$c->first_name} {$c->last_name}") ?>
-          </td>
-          <td><?= htmlspecialchars($c->email) ?></td>
-          <td><?= htmlspecialchars($c->phone) ?></td>
-          <td>
-            <a href="<?= BASE_URL ?>
-               /public/index.php?mod=contacts&action=edit&id=<?= $c->id ?>"
+            <a href="<?php echo BASE_URL; ?>/public/index.php?mod=contacts&action=edit&id=<?php echo $c->id; ?>"
                class="btn btn-sm btn-secondary">Edit</a>
-            <a href="<?= BASE_URL ?>
-               /public/index.php?mod=contacts&action=destroy&id=<?= $c->id ?>"
+            <a href="<?php echo BASE_URL; ?>/public/index.php?mod=contacts&action=destroy&id=<?php echo $c->id; ?>"
                class="btn btn-sm btn-danger"
                onclick="return confirm('Delete this contact?');">
               Delete
@@ -56,8 +54,7 @@
       <?php endforeach; ?>
     <?php else: ?>
       <tr>
-        <td colspan="5"
-            class="text-center text-muted fst-italic">
+        <td colspan="5" class="text-center text-muted fst-italic">
           No contacts yet.
         </td>
       </tr>
@@ -76,8 +73,9 @@ document.addEventListener('DOMContentLoaded', function() {
   input.addEventListener('input', function() {
     const q = this.value.toLowerCase();
     rows.forEach(row => {
-      const text = row.textContent.toLowerCase();
-      row.style.display = text.includes(q) ? '' : 'none';
+      row.style.display = row.textContent.toLowerCase().includes(q)
+        ? ''
+        : 'none';
     });
   });
 });
