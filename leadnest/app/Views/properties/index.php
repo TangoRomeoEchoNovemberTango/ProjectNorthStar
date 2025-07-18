@@ -1,20 +1,9 @@
 <?php include __DIR__ . '/../../../shared/header.php'; ?>
 
-<!-- LIVE SEARCH ENABLED: properties final -->
-
 <h1>Properties</h1>
 
-<?php if (! empty($_SESSION['flash'])): ?>
-  <div class="alert alert-<?= $_SESSION['flash']['type'] ?>">
-    <?= htmlspecialchars($_SESSION['flash']['message']) ?>
-  </div>
-  <?php unset($_SESSION['flash']); ?>
-<?php endif; ?>
-
 <a href="<?= BASE_URL ?>/public/index.php?mod=properties&action=create"
-   class="btn btn-primary mb-3">
-  + New Property
-</a>
+   class="btn btn-primary mb-3">+ New Property</a>
 
 <div class="mb-3">
   <input
@@ -43,18 +32,29 @@
     <?php foreach ($properties as $p): ?>
       <tr>
         <td><?= htmlspecialchars($p->id) ?></td>
+
+        <!-- CONTACT COLUMN -->
         <td>
-          <?php
-            $ct = \App\Models\Contact::find((int)$p->contact_id);
-            echo htmlspecialchars("{$ct->first_name} {$ct->last_name}");
-          ?>
+          <?php if ($p->contact_id !== null): ?>
+            <?php
+              $ct = \App\Models\Contact::find((int)$p->contact_id);
+              if ($ct) {
+                echo htmlspecialchars("{$ct->first_name} {$ct->last_name}");
+              } else {
+                echo '<span class="text-muted">Unassigned</span>';
+              }
+            ?>
+          <?php else: ?>
+            <span class="text-muted">Unassigned</span>
+          <?php endif; ?>
         </td>
+
         <td><?= htmlspecialchars($p->address) ?></td>
         <td><?= htmlspecialchars($p->motivation) ?></td>
         <td><?= htmlspecialchars($p->timeline) ?></td>
-        <td><?= htmlspecialchars(number_format($p->price,2)) ?></td>
-        <td><?= htmlspecialchars(number_format($p->arv,2)) ?></td>
-        <td><?= htmlspecialchars(number_format($p->mao,2)) ?></td>
+        <td><?= number_format($p->price,2) ?></td>
+        <td><?= number_format($p->arv,2) ?></td>
+        <td><?= number_format($p->mao,2) ?></td>
         <td>
           <a href="<?= BASE_URL ?>/public/index.php?mod=properties&action=edit&id=<?= $p->id ?>"
              class="btn btn-sm btn-secondary">Edit</a>
@@ -70,17 +70,14 @@
 </table>
 
 <script>
-  console.log('live-search properties final loaded');
   document.addEventListener('DOMContentLoaded', function() {
     const input = document.getElementById('search-input');
-    const rows = Array.from(
-      document.querySelectorAll('#properties-table tbody tr')
-    );
+    const rows  = Array.from(document.querySelectorAll('#properties-table tbody tr'));
     input.addEventListener('input', function() {
       const q = this.value.toLowerCase();
-      rows.forEach(row => {
-        row.style.display =
-          row.textContent.toLowerCase().includes(q) ? '' : 'none';
+      rows.forEach(r => {
+        r.style.display =
+          r.textContent.toLowerCase().includes(q) ? '' : 'none';
       });
     });
   });

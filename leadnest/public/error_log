@@ -1778,3 +1778,105 @@ Stack trace:
 [17-Jul-2025 16:07:51 America/Chicago] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home3/kgcljxte/public_html/leadnest/app/Controllers/ContactsController.php on line 203
 [17-Jul-2025 16:08:03 America/Chicago] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home3/kgcljxte/public_html/leadnest/app/Controllers/ContactsController.php on line 203
 [17-Jul-2025 16:08:05 America/Chicago] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in /home3/kgcljxte/public_html/leadnest/app/Controllers/ContactsController.php on line 203
+[17-Jul-2025 16:31:39 America/Chicago] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home3/kgcljxte/public_html/leadnest/shared/header.php:1) in /home3/kgcljxte/public_html/leadnest/public/index.php on line 85
+[17-Jul-2025 16:31:42 America/Chicago] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home3/kgcljxte/public_html/leadnest/shared/header.php:1) in /home3/kgcljxte/public_html/leadnest/public/index.php on line 85
+[17-Jul-2025 16:31:43 America/Chicago] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home3/kgcljxte/public_html/leadnest/shared/header.php:1) in /home3/kgcljxte/public_html/leadnest/public/index.php on line 85
+[17-Jul-2025 16:31:43 America/Chicago] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home3/kgcljxte/public_html/leadnest/shared/header.php:1) in /home3/kgcljxte/public_html/leadnest/public/index.php on line 85
+[17-Jul-2025 16:31:43 America/Chicago] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home3/kgcljxte/public_html/leadnest/shared/header.php:1) in /home3/kgcljxte/public_html/leadnest/public/index.php on line 85
+[17-Jul-2025 16:32:49 America/Chicago] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home3/kgcljxte/public_html/leadnest/shared/header.php:1) in /home3/kgcljxte/public_html/leadnest/public/index.php on line 85
+[17-Jul-2025 16:33:26 America/Chicago] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home3/kgcljxte/public_html/leadnest/shared/header.php:1) in /home3/kgcljxte/public_html/leadnest/public/index.php on line 85
+[17-Jul-2025 17:18:05 America/Chicago] PHP Warning:  Attempt to read property "first_name" on null in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 49
+[17-Jul-2025 17:18:05 America/Chicago] PHP Warning:  Attempt to read property "last_name" on null in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 49
+[18-Jul-2025 02:39:08 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 02:39:23 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:11:31 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:11:31 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:12:06 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:12:06 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:12:44 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:12:44 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:17:15 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:17:15 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:52:22 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:52:22 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:54:25 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:54:25 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:54:25 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:54:50 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:54:50 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:54:50 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:55:54 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:55:54 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:59:10 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 14:59:10 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 15:15:11 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 15:15:11 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 15:16:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 15:16:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 15:16:42 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 15:17:37 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 15:17:37 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 15:17:37 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 15:18:24 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 15:18:24 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 15:18:24 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 15:19:09 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 15:19:09 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 15:19:09 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 15:20:04 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 15:20:04 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 15:20:04 America/Chicago] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/kgcljxte/public_html/leadnest/app/Views/properties/index.php on line 53
+[18-Jul-2025 15:37:28 America/Chicago] PHP Fatal error:  Uncaught Error: Class "App\Models\Model" not found in /home3/kgcljxte/public_html/leadnest/app/Models/Contact.php:6
+Stack trace:
+#0 /home3/kgcljxte/public_html/leadnest/public/index.php(31): require()
+#1 /home3/kgcljxte/public_html/leadnest/public/index.php(49): {closure}('App\\Models\\Cont...')
+#2 {main}
+  thrown in /home3/kgcljxte/public_html/leadnest/app/Models/Contact.php on line 6
+[18-Jul-2025 15:37:32 America/Chicago] PHP Fatal error:  Uncaught Error: Class "App\Models\Model" not found in /home3/kgcljxte/public_html/leadnest/app/Models/Contact.php:6
+Stack trace:
+#0 /home3/kgcljxte/public_html/leadnest/public/index.php(31): require()
+#1 /home3/kgcljxte/public_html/leadnest/public/index.php(49): {closure}('App\\Models\\Cont...')
+#2 {main}
+  thrown in /home3/kgcljxte/public_html/leadnest/app/Models/Contact.php on line 6
+[18-Jul-2025 15:37:34 America/Chicago] PHP Fatal error:  Uncaught Error: Class "App\Models\Model" not found in /home3/kgcljxte/public_html/leadnest/app/Models/Contact.php:6
+Stack trace:
+#0 /home3/kgcljxte/public_html/leadnest/public/index.php(31): require()
+#1 /home3/kgcljxte/public_html/leadnest/public/index.php(49): {closure}('App\\Models\\Cont...')
+#2 {main}
+  thrown in /home3/kgcljxte/public_html/leadnest/app/Models/Contact.php on line 6
+[18-Jul-2025 15:37:35 America/Chicago] PHP Fatal error:  Uncaught Error: Class "App\Models\Model" not found in /home3/kgcljxte/public_html/leadnest/app/Models/Contact.php:6
+Stack trace:
+#0 /home3/kgcljxte/public_html/leadnest/public/index.php(31): require()
+#1 /home3/kgcljxte/public_html/leadnest/public/index.php(49): {closure}('App\\Models\\Cont...')
+#2 {main}
+  thrown in /home3/kgcljxte/public_html/leadnest/app/Models/Contact.php on line 6
+[18-Jul-2025 15:37:36 America/Chicago] PHP Fatal error:  Uncaught Error: Class "App\Models\Model" not found in /home3/kgcljxte/public_html/leadnest/app/Models/Contact.php:6
+Stack trace:
+#0 /home3/kgcljxte/public_html/leadnest/public/index.php(31): require()
+#1 /home3/kgcljxte/public_html/leadnest/public/index.php(49): {closure}('App\\Models\\Cont...')
+#2 {main}
+  thrown in /home3/kgcljxte/public_html/leadnest/app/Models/Contact.php on line 6
+[18-Jul-2025 15:40:24 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Core\Model" not found in /home3/kgcljxte/public_html/leadnest/app/Models/Contact.php:7
+Stack trace:
+#0 /home3/kgcljxte/public_html/leadnest/public/index.php(31): require()
+#1 /home3/kgcljxte/public_html/leadnest/public/index.php(49): {closure}('App\\Models\\Cont...')
+#2 {main}
+  thrown in /home3/kgcljxte/public_html/leadnest/app/Models/Contact.php on line 7
+[18-Jul-2025 15:40:25 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Core\Model" not found in /home3/kgcljxte/public_html/leadnest/app/Models/Contact.php:7
+Stack trace:
+#0 /home3/kgcljxte/public_html/leadnest/public/index.php(31): require()
+#1 /home3/kgcljxte/public_html/leadnest/public/index.php(49): {closure}('App\\Models\\Cont...')
+#2 {main}
+  thrown in /home3/kgcljxte/public_html/leadnest/app/Models/Contact.php on line 7
+[18-Jul-2025 15:40:28 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Core\Model" not found in /home3/kgcljxte/public_html/leadnest/app/Models/Contact.php:7
+Stack trace:
+#0 /home3/kgcljxte/public_html/leadnest/public/index.php(31): require()
+#1 /home3/kgcljxte/public_html/leadnest/public/index.php(49): {closure}('App\\Models\\Cont...')
+#2 {main}
+  thrown in /home3/kgcljxte/public_html/leadnest/app/Models/Contact.php on line 7
+[18-Jul-2025 15:40:30 America/Chicago] PHP Fatal error:  Uncaught Error: Class "Core\Model" not found in /home3/kgcljxte/public_html/leadnest/app/Models/Contact.php:7
+Stack trace:
+#0 /home3/kgcljxte/public_html/leadnest/public/index.php(31): require()
+#1 /home3/kgcljxte/public_html/leadnest/public/index.php(49): {closure}('App\\Models\\Cont...')
+#2 {main}
+  thrown in /home3/kgcljxte/public_html/leadnest/app/Models/Contact.php on line 7

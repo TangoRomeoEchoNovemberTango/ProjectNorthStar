@@ -6,7 +6,7 @@ use PDO;
 class Property
 {
     public ?int    $id          = null;
-    public string  $uuid;               // NOT NULL in DB
+    public string  $uuid;
     public ?int    $contact_id  = null;
     public string  $address     = '';
     public ?string $description = null;
@@ -49,8 +49,7 @@ class Property
     public function save(): void
     {
         if ($this->id === null) {
-            $this->uuid = bin2hex(random_bytes(16));  // satisfy NOT NULL
-
+            $this->uuid = bin2hex(random_bytes(16));
             $stmt = self::$db->prepare("
                 INSERT INTO properties
                   (uuid, contact_id, address, description, motivation,
@@ -73,15 +72,9 @@ class Property
         } else {
             $stmt = self::$db->prepare("
                 UPDATE properties SET
-                  contact_id  = ?,
-                  address     = ?,
-                  description = ?,
-                  motivation  = ?,
-                  timeline    = ?,
-                  `condition` = ?,
-                  price       = ?,
-                  arv         = ?,
-                  mao         = ?
+                  contact_id  = ?, address     = ?, description = ?,
+                  motivation  = ?, timeline    = ?, `condition` = ?,
+                  price       = ?, arv         = ?, mao         = ?
                 WHERE id = ?
             ");
             $stmt->execute([
@@ -109,4 +102,17 @@ class Property
             $stmt->execute([$this->id]);
         }
     }
+
+    public function unassign(): void
+    {
+        if ($this->id !== null) {
+            $stmt = self::$db->prepare("
+                UPDATE properties
+                SET contact_id = NULL
+                WHERE id = ?
+            ");
+            $stmt->execute([$this->id]);
+        }
+    }
 }
+?>
